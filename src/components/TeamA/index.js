@@ -1,15 +1,14 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Gryffindor from "../../assets/gryffindor.png";
 import { Scoreboard } from "../Scoreboard";
 import { useScore } from "../../hooks/useScore";
 
 export function TeamA(){
     const {
-        gryffindorScore,
-        handleIncreaseGryffindorScore,
-        handleDecreaseGryffindorScore,
+        teamA,
+        handleIncreaseTeamAScore,
+        handleDecreaseTeamAScore,
       } = useScore();
 
     return(
@@ -25,13 +24,12 @@ export function TeamA(){
             justifyContent: "center",
           }}
         >
-          <h2>Gryffindor</h2>
-          <img className="icon-house" src={Gryffindor} alt="Gryffindor icon" />
+          <h2>Team A</h2>
         </Box>
         <Scoreboard
-          score={gryffindorScore}
-          handleIncreaseScore={handleIncreaseGryffindorScore}
-          handleDecreaseScore={handleDecreaseGryffindorScore}
+          score={teamA}
+          handleIncreaseScore={handleIncreaseTeamAScore}
+          handleDecreaseScore={handleDecreaseTeamAScore}
         />
       </Paper>
     )

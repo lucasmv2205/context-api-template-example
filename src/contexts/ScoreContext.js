@@ -6,39 +6,41 @@ import React, {
   export const ScoreContext = createContext({})
   
   const ScoreProvider = ({ children }) => {
-    const [gryffindorScore, setGryffindorScore] = useState(0);
-    const [slytherinScore, setSlytherinScore] = useState(0);
+    const [teamA, setTeamA] = useState(0);
+    const [teamB, setTeamB] = useState(0);
 
-    function handleIncreaseGryffindorScore(){
-        setGryffindorScore((prevScore) => prevScore+1)
+    function handleIncreaseTeamAScore(){
+        setTeamA((prevScore) => prevScore+1)
     }
 
-    function handleIncreaseSlytherinScore(){
-        setSlytherinScore((prevScore) => prevScore+1)
+    function handleIncreaseTeamBScore(){
+        setTeamB((prevScore) => prevScore+1)
     }
 
-    function handleDecreaseGryffindorScore(){
-        setGryffindorScore((prevScore) => prevScore-1)
-    }
+    function handleDecreaseTeamAScore(){
+      setTeamA((prevScore) => prevScore-1)
+  }
 
-    function handleDeacreaseSlytherinScore(){
-        setSlytherinScore((prevScore) => prevScore-1)
+    function handleDecreaseTeamBScore(){
+        setTeamB((prevScore) => prevScore-1)
     }
 
     function getScoreSum(){
-        return gryffindorScore+slytherinScore
+        return teamA+teamB
     }
   
     return (
       <ScoreContext.Provider
         value={{
-            gryffindorScore,
-            slytherinScore,
-            handleIncreaseGryffindorScore,
-            handleIncreaseSlytherinScore,
-            getScoreSum,
-            handleDecreaseGryffindorScore,
-            handleDeacreaseSlytherinScore
+          teamA,
+          setTeamA,
+          teamB,
+          setTeamB,
+          handleIncreaseTeamAScore,
+          handleIncreaseTeamBScore,
+          handleDecreaseTeamAScore,
+          handleDecreaseTeamBScore,
+          getScoreSum
         }}
       >
         {children}

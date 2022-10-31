@@ -1,21 +1,20 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Slytherin from "../../assets/slytherin.png";
 import { Scoreboard } from "../Scoreboard";
 import { useScore } from "../../hooks/useScore";
 
 export function TeamB(){
     const {
-        slytherinScore,
-        handleIncreaseSlytherinScore,
-        handleDeacreaseSlytherinScore,
+        teamB,
+        handleIncreaseTeamBScore,
+        handleDecreaseTeamBScore,
       } = useScore();
 
     return(
         <Paper
         elevation={2}
-        sx={{ color: "#fff", padding: 1, backgroundColor: "#0D6217" }}
+        sx={{ color: "#fff", padding: 1, backgroundColor: "#7f0909" }}
       >
         <Box
           sx={{
@@ -25,13 +24,12 @@ export function TeamB(){
             justifyContent: "center",
           }}
         >
-          <h2>Slytherin</h2>
-          <img className="icon-house" src={Slytherin} alt="Slytherin icon" />
+          <h2>Team B</h2>
         </Box>
         <Scoreboard
-          score={slytherinScore}
-          handleIncreaseScore={handleIncreaseSlytherinScore}
-          handleDecreaseScore={handleDeacreaseSlytherinScore}
+          score={teamB}
+          handleIncreaseScore={handleIncreaseTeamBScore}
+          handleDecreaseScore={handleDecreaseTeamBScore}
         />
       </Paper>
     )
