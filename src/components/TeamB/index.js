@@ -14,7 +14,7 @@ export function TeamB(){
     return(
         <Paper
         elevation={2}
-        sx={{ color: "#fff", padding: 1, backgroundColor: "#7f0909" }}
+        sx={{ color: "#fff", padding: 1, backgroundColor: "#0D6217" }}
       >
         <Box
           sx={{
